@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { longestSubstring } = require("./program2").default;
+const { longestSubstring } = require("./program2");
 
 describe("Test cases for longestSubstring function", function () {
 
