@@ -29,5 +29,3 @@ describe("Test cases for longestSubstring function", function () {
     });
 
 });
-
-
