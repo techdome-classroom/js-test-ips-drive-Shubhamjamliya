@@ -1,39 +1,33 @@
 function smallestMissingPositiveInteger(nums) {
 
+  let n = nums.length;
 
-    let n = nums.length;
-    
+    // Mark non-positive numbers and numbers greater than n as 0
     for (let i = 0; i < n; i++) {
         if (nums[i] <= 0 || nums[i] > n) {
-            nums[i] = 1;
+            nums[i] = 0;
         }
     }
-    
+
+    // Use index as a hash key and number sign as a presence detector
     for (let i = 0; i < n; i++) {
         let num = Math.abs(nums[i]);
-        if (num === n) {
-            nums[0] = -Math.abs(nums[0]);
-        } else {
-            nums[num] = -Math.abs(nums[num]);
+        if (num !== 0) {
+            nums[num - 1] = -Math.abs(nums[num - 1]);
         }
     }
-    
-    for (let i = 1; i < n; i++) {
-        if (nums[i] > 0) {
-            return i;
+
+    // Find the first positive element
+    for (let i = 0; i < n; i++) {
+        if (nums[i] >= 0) {
+            return i + 1;
         }
-    }
-    
-    if (nums[0] > 0) {
-        return n;
     }
 
     return n + 1;
 }
 
-console.log(smallestMissingPositiveInteger([3, 4, -1, 1])); // Output: 2
-console.log(smallestMissingPositiveInteger([1, 2, 0])); // Output: 3
-console.log(smallestMissingPositiveInteger([-1, -3, 4, 2])); // Output: 1
-  
+// Example usage:
+console.log(smallest_missing_positive_integer([-1, -3, 4, 2])); // Output: 1
   module.exports = smallestMissingPositiveInteger;
 
