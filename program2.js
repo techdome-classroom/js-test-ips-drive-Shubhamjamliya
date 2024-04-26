@@ -20,8 +20,6 @@ function longestSubstring(s) {
     return longest;
 }
 
-// Example usage:
-console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3
-}
+
 
 module.exports = { longestSubstring };
