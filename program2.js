@@ -20,7 +20,7 @@ function longestSubstring(s) {
     return longest;
 }
 
-// Example usage:
+
 console.log(longestSubstring("abcabcbb")); // Output: 3
 
 
