@@ -24,4 +24,4 @@ function longestSubstring(s) {
 console.log(longestSubstring("abcabcbb")); // Output: 3
 
 
-export default { longestSubstring };
+module.exports = { longestSubstring };
